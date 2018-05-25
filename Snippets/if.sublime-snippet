@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[If[
+	${1:(*test*)},
+
+	${2:(*then*)},
+
+	${3:(*else*)},
+]
+]]></content>
+	<tabTrigger>If</tabTrigger>
+	<description>If template</description>
+</snippet>

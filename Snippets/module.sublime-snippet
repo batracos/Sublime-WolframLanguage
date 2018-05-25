@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[Module[
+	{
+		${1:(* variable *)}
+	},
+
+	${2: (* content *)}
+
+]
+]]></content>
+	<tabTrigger>Module</tabTrigger>
+	<description>Module template</description>
+</snippet>
