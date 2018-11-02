@@ -97,7 +97,7 @@ contexts:
     - match: ((?:System`)?{{built_in_constants}})
       scope: constant.language.wolfram
     - match: ((?:System`)?{{built_in_options}})
-      scope: variable.function.wolfram
+      scope: variable.function.wolfram.system.option
     - match: \"
       scope: punctuation.definition.string.begin
       push:
@@ -191,11 +191,13 @@ contexts:
         - include: expressions-nopattern
 
   function:
+    - match: '(?:System`)?({{built_in_functions}})'
+      scope: variable.function.wolfram.system
     - match: ({{identifier}})\s*(\[(?!\[))
       captures:
         1: variable.function.wolfram
         3: punctuation.section.brackets.begin.wolfram
-      push: 
+      push:
         - meta_scope: meta.block.wolfram
         - match: \]
           scope: punctuation.section.brackets.end.wolfram
@@ -205,17 +207,15 @@ contexts:
       scope: variable.function.wolfram
 
   variable:
-    - match: '(?:System`)?({{built_in_functions}})'
-      scope: variable.function
     - match: '{{identifier}}'
       scope: variable.other
     - match: (#[a-zA-Z][[:alnum:]]*|#\d*)
       scope: variable.parameter
 
   scoping:
-    - match: (Block|Module|With|Function)\s*(\[(?!\[))
+    - match: ((?:System`)?Block|Module|With|Function)\s*(\[(?!\[))
       captures:
-        1: variable.function.scoping.wolfram
+        1: variable.function.wolfram.system.scoping
         2: punctuation.section.brackets.begin.wolfram
       push:
         - meta_content_scope: meta.block.wolfram

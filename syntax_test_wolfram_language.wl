@@ -276,7 +276,7 @@
 (* SCOPING *)
 
 Module[
-(*^^^^ variable.function.scoping.wolfram *)
+(*^^^^ variable.function.wolfram.system.scoping *)
 (*    ^ punctuation.section.brackets.begin.wolfram *)
     { foo, bar = 1},
 (*   ^ meta.block.local.wolfram *)
