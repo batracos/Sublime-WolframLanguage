@@ -182,6 +182,24 @@
 
   f[[]]
 
+(* UpValues *)
+
+  f /: g[f] := 1
+(*^ entity.name.function  *)
+(*  ^^ keyword.operator.assignment.wolfram *)
+(*     ^ meta.block.wolfram variable.function.wolfram *)
+(*       ^ meta.block.wolfram variable.other *)
+
+  f /: g[f] = 1
+(*^ entity.name.function  *)
+(*     ^ meta.block.wolfram variable.function.wolfram *)
+(*          ^ keyword.operator.assignment.wolfram *)
+
+  f /: g[f] =. 
+(*^ entity.name.function  *)
+(*     ^ meta.block.wolfram variable.function.wolfram *)
+(*          ^^ keyword.operator.assignment.wolfram *)
+
 
 (* STRINGS *)
 

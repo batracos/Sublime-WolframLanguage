@@ -251,6 +251,14 @@ contexts:
 
 
   declarations:
+    # TagSet (_ /: _ = _), TagSetDelayed (_ /: _ := _), TagUnset (_ /: _ =.)
+    - match: '{{identifier}}(?=\s*/:.*(?::=|[^\+\-\/\*\!\=]=[^\=\!]))'
+      scope: entity.name.function
+      push:
+        - match: '(?=:?=|=\.)'
+          pop: true
+        - include: expressions
+    # SetDelayed
     - match: |-
         (?x)
         {{identifier}}
