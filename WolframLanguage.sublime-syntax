@@ -271,21 +271,16 @@ contexts:
               \g<-1>
             )*
             \]
-          )
+          )*
           \s*(?:\/;.*)?\s*:=
         )
       scope: entity.name.function
-      push: 
-        - match: \[
-          scope: punctuation.section.brackets.begin.wolfram
-          push: 
-            - meta_scope: meta.arguments.wolfram
-            - match: \]
-              scope: punctuation.section.brackets.end.wolfram
-              pop: true
-            - include: sequence
-        - match: (?=[^\[])
+      # this scope is needed to avoid matching g as a declaration in
+      # f[x_] /; g[x] := x
+      push:
+        - match: (?=:+=)
           pop: true
+        - include: expressions
     - match: ((?:{{symbol}}`)*(\${{symbol}}))(?=\s*:?=)
       scope: entity.name.constant.wolfram
 

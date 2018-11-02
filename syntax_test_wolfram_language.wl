@@ -147,13 +147,19 @@
 
 (* FUNCTIONS *)
 
+  f := 1
+(*^ entity.name.function*)
+
+  f[] := 1
+(*^ entity.name.function*)
+
   f[x_, y_] := 2x
 (*^ entity.name.function*)
-(* ^ meta.arguments.wolfram punctuation.section.brackets.begin.wolfram *)
-(*  ^^ meta.arguments.wolfram meta.pattern.blank.wolfram variable.parameter.wolfram *)
-(*    ^^ meta.arguments.wolfram punctuation.separator.sequence.wolfram *)
+(* ^ punctuation.section.brackets.begin.wolfram *)
+(*  ^^ meta.pattern.blank.wolfram variable.parameter.wolfram *)
+(*    ^ punctuation.separator.sequence.wolfram *)
 (*      ^ variable.parameter*)
-(*        ^ meta.arguments.wolfram punctuation.section.brackets.end.wolfram *)
+(*        ^ punctuation.section.brackets.end.wolfram *)
 (*          ^^ keyword.operator*)
 
   f[x_, OptionsPattern[]] := 2x
@@ -177,10 +183,19 @@
 (*^ entity.name.function*)
 (*  ^ variable.parameter*)
 
+(* Condition *)
+
   f[x_] /; x > 0 := x
 (*^ entity.name.function  *)
 
-  f[[]]
+  f[x_] /; g[x] := x
+(*^ entity.name.function  *)
+(*         ^ meta.block.wolfram variable.function.wolfram *)
+
+(* SubValues *)
+
+  f[x_][y_] := x*y
+(*^ entity.name.function*)
 
 (* UpValues *)
 
