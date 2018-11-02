@@ -134,7 +134,7 @@ contexts:
       scope: keyword.operator.comparison.wolfram
     - match: (!|\|\||&&)
       scope: keyword.operator.logical.wolfram
-    - match: (:?=|\/:|[-:]>|[+\-*/]=|<->)
+    - match: (=\.|:?=|\/:|[-:]>|[+\-*/]=|<->)
       scope: keyword.operator.assignment.wolfram
     - match: '\/;'
       scope: keyword.operator.condition.wolfram
