@@ -119,6 +119,15 @@
 (*           ^^^^^^^^^^^^ variable.function.wolfram *)
 (*                        ^^ keyword.operator *)
 
+  Image`foo
+(*^ variable.other *)
+(*      ^ variable.other*)
+
+  Image$foo
+(*^ variable.other *)
+(*      ^ variable.other*)
+
+
 (* PATTERNS *)
 
   var_head  foo

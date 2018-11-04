@@ -6,7 +6,7 @@
 
 name: WolframLanguage
 
-file_extensions: 
+file_extensions:
   - m
   - wl
   - wls
@@ -21,6 +21,7 @@ scope: source.wolfram
 variables:
   symbol: '[$[:alpha:]]+[$[:alnum:]]*'
   identifier: (?:{{symbol}}`)*({{symbol}})
+  boundary: '(?![$`])\b'
 
   # Built-in functions
   built_in_functions: |-
